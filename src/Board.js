@@ -26,7 +26,16 @@ class Board extends Component {
     const textBoxes = []
     for (let x = 0; x < this.state.boardType; x++) {
       for (let y = 0; y < this.state.boardType; y++) {
-        textBoxes.push(<input key={`${x}${y}`} type="text" id={`${x}${y}`} autoComplete="off" size="1" />)
+        textBoxes.push(
+          <input
+            autoComplete="off"
+            id={`${x}${y}`}
+            key={`${x}${y}`}
+            maxLength="1"
+            size="1"
+            type="text"
+          />
+        )
       }
     }
     return textBoxes

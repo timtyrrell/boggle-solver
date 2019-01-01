@@ -27,98 +27,119 @@ exports[`renders without crashing 1`] = `
   <input
     autoComplete="off"
     id="00"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="01"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="02"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="03"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="10"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="11"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="12"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="13"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="20"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="21"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="22"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="23"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="30"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="31"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="32"
+    maxLength="1"
     size="1"
     type="text"
   />
   <input
     autoComplete="off"
     id="33"
+    maxLength="1"
     size="1"
     type="text"
   />
+  <button
+    onClick={[Function]}
+  >
+    Solve
+  </button>
 </div>
 `;
