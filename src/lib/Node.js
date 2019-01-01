@@ -1,6 +1,7 @@
 class Node {
-  constructor(value) {
+  constructor(value, connectedNodes = []) {
     this.value = value
+    this.connectedNodes = connectedNodes
   }
 }
 
