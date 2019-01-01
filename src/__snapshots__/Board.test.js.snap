@@ -4,6 +4,26 @@ exports[`renders without crashing 1`] = `
 <div
   className="Board"
 >
-  render checkbox and textboxes here
+  <select
+    onChange={[Function]}
+    value="4x4"
+  >
+    <option
+      value="4x4"
+    >
+      4x4
+    </option>
+    <option
+      value="5x5"
+    >
+      5x5
+    </option>
+    <option
+      value="6x6"
+    >
+      6x6
+    </option>
+  </select>
+  render textboxes based on board state
 </div>
 `;
