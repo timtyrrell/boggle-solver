@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
+import wordList from './words_alpha.txt'
 
 class Board extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       boardType: '4',
+      dictionary: [],
     }
 
     this.handleBoardTypeChange = this.handleBoardTypeChange.bind(this)
+  }
+
+  componentDidMount() {
+    const words = wordList.split("\n")
+    this.setState({ dictionary: words })
   }
 
   handleBoardTypeChange = event => {
@@ -33,7 +41,7 @@ class Board extends Component {
           <option value="6">6x6</option>
         </select>
 
-        { this.renderTextBoxes ()}
+        { this.renderTextBoxes()}
       </div>
     )
   }
