@@ -6,24 +6,119 @@ exports[`renders without crashing 1`] = `
 >
   <select
     onChange={[Function]}
-    value="4x4"
+    value="4"
   >
     <option
-      value="4x4"
+      value="4"
     >
       4x4
     </option>
     <option
-      value="5x5"
+      value="5"
     >
       5x5
     </option>
     <option
-      value="6x6"
+      value="6"
     >
       6x6
     </option>
   </select>
-  render textboxes based on board state
+  <input
+    autoComplete="off"
+    id="00"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="01"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="02"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="03"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="10"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="11"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="12"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="13"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="20"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="21"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="22"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="23"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="30"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="31"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="32"
+    size="1"
+    type="text"
+  />
+  <input
+    autoComplete="off"
+    id="33"
+    size="1"
+    type="text"
+  />
 </div>
 `;
