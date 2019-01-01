@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`verifies defaults 1`] = `
+Array [
+  Node {
+    "value": "a",
+  },
+  Node {
+    "value": "p",
+  },
+  Node {
+    "value": "p",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "l",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "n",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "e",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "x",
+  },
+  Node {
+    "value": "Z",
+  },
+]
+`;

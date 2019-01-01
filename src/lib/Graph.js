@@ -10,9 +10,16 @@ class Graph {
   createNodes(boardSize, boggleLetters) {
     const nodes = []
 
-    for (let x = 0; x < boardSize; x++) {
-      for (let y = 0; y < boardSize; y++) {
-        nodes.push(new Node (boggleLetters[x][y]))
+    for (let row = 0; row < boardSize; row++) {
+      for (let column = 0; column < boardSize; column++) {
+        nodes.push(new Node
+          (
+            boggleLetters[row][column],
+            row,
+            column,
+            // this.generateConnectedNodeList(this.boggleLetters, row, column, this.boardSize)
+          )
+        )
       }
     }
     return nodes

@@ -18,8 +18,27 @@ class Board extends Component {
   }
 
   handleBoardSolve = event => {
+    const { boardType, boggleInputValues } = this.state
+    const formattedLetters = []
+
+    for (let x = 0; x < Number(boardType); x++) {
+      formattedLetters.push([])
+    }
+
+    Object.keys(boggleInputValues).forEach((key) => {
+      const row = key.slice(0,1)
+      const column = key.slice(1,2)
+      formattedLetters[row][column] = boggleInputValues[key]
+    })
+
+    //format (for 4x4)
+    // [
+    //   ['a','p','p','x'],
+    //   ['x','x','l','x'],
+    //   ['n','x','e','x'],
+    //   ['x','x','x','Z']
+    // ]
     console.log('Submitted... now render words into solver')
-    console.log(Object.values(this.state.boggleInputValues))
   }
 
   handleBoardTypeChange = event => {
@@ -40,19 +59,19 @@ class Board extends Component {
 
   renderTextBoxes() {
     const textBoxes = []
-    for (let x = 0; x < this.state.boardType; x++) {
-      for (let y = 0; y < this.state.boardType; y++) {
+    for (let row = 0; row < this.state.boardType; row++) {
+      for (let column = 0; column < this.state.boardType; column++) {
         textBoxes.push(
           <input
             autoComplete="off"
-            id={`${x}${y}`}
-            key={`${x}${y}`}
+            id={`${row}${column}`}
+            key={`${row}${column}`}
             maxLength="1"
-            name={`${x}${y}`}
+            name={`${row}${column}`}
             onChange={this.handleInputChange}
             size="1"
             type="text"
-            value={this.state.boggleInputValues[`${x}${y}`]}
+            value={this.state.boggleInputValues[`${row}${column}`]}
           />
         )
       }
