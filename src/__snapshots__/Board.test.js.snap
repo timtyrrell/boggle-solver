@@ -28,6 +28,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="00"
     maxLength="1"
+    name="00"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -35,6 +37,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="01"
     maxLength="1"
+    name="01"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -42,6 +46,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="02"
     maxLength="1"
+    name="02"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -49,6 +55,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="03"
     maxLength="1"
+    name="03"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -56,6 +64,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="10"
     maxLength="1"
+    name="10"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -63,6 +73,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="11"
     maxLength="1"
+    name="11"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -70,6 +82,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="12"
     maxLength="1"
+    name="12"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -77,6 +91,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="13"
     maxLength="1"
+    name="13"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -84,6 +100,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="20"
     maxLength="1"
+    name="20"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -91,6 +109,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="21"
     maxLength="1"
+    name="21"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -98,6 +118,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="22"
     maxLength="1"
+    name="22"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -105,6 +127,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="23"
     maxLength="1"
+    name="23"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -112,6 +136,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="30"
     maxLength="1"
+    name="30"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -119,6 +145,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="31"
     maxLength="1"
+    name="31"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -126,6 +154,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="32"
     maxLength="1"
+    name="32"
+    onChange={[Function]}
     size="1"
     type="text"
   />
@@ -133,6 +163,8 @@ exports[`renders without crashing 1`] = `
     autoComplete="off"
     id="33"
     maxLength="1"
+    name="33"
+    onChange={[Function]}
     size="1"
     type="text"
   />

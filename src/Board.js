@@ -7,10 +7,9 @@ class Board extends Component {
 
     this.state = {
       boardType: '4',
+      boggleInputValues: {},
       dictionary: [],
     }
-
-    this.handleBoardTypeChange = this.handleBoardTypeChange.bind(this)
   }
 
   componentDidMount() {
@@ -18,8 +17,25 @@ class Board extends Component {
     this.setState({ dictionary: words })
   }
 
+  handleBoardSolve = event => {
+    console.log('Submitted... now render words into solver')
+    console.log(Object.values(this.state.boggleInputValues))
+  }
+
   handleBoardTypeChange = event => {
     this.setState({ boardType: event.target.value })
+  }
+
+  handleInputChange = event => {
+    const { target } = event
+    const { name, value } = target
+
+    this.setState(prevState => ({
+      boggleInputValues: {
+        ...prevState.boggleInputValues,
+        [name]: value,
+      },
+    }))
   }
 
   renderTextBoxes() {
@@ -32,8 +48,11 @@ class Board extends Component {
             id={`${x}${y}`}
             key={`${x}${y}`}
             maxLength="1"
+            name={`${x}${y}`}
+            onChange={this.handleInputChange}
             size="1"
             type="text"
+            value={this.state.boggleInputValues[`${x}${y}`]}
           />
         )
       }
@@ -51,6 +70,7 @@ class Board extends Component {
         </select>
 
         { this.renderTextBoxes()}
+        <button onClick={this.handleBoardSolve}>Solve</button>
       </div>
     )
   }
