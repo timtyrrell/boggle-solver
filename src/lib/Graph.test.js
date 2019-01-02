@@ -25,4 +25,7 @@ it('generates a correct connected node list', () => {
   const graph = new Graph(boardSize, formattedLetters)
   expect(graph.nodes[0].connectedNodes.length).toEqual(3)
   expect(graph.nodes[0].connectedNodes).toEqual(['0,1', '1,0', '1,1'])
+  expect(graph.nodes[5].connectedNodes).toEqual(
+    ['0,0', '0,1', '0,2', '1,0', '1,2', '2,0', '2,1', '2,2']
+  )
 })

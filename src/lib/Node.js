@@ -1,7 +1,9 @@
 class Node {
-  constructor(value, connectedNodes = []) {
+  constructor(value, rowPosition, columnPosition, connectedNodes = []) {
     this.value = value
     this.connectedNodes = connectedNodes
+    this.rowPosition = rowPosition
+    this.columnPosition = columnPosition
   }
 }
 

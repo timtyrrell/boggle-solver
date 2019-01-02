@@ -4,7 +4,7 @@ class Graph {
   constructor(boardSize, boggleLetters) {
     this.boardSize = Number(boardSize)
     this.boggleLetters = boggleLetters
-    this.nodes =  this.createNodes(boardSize, boggleLetters)
+    this.nodes =  this.createNodes(this.boardSize, boggleLetters)
   }
 
   createNodes(boardSize, boggleLetters) {
@@ -15,6 +15,8 @@ class Graph {
         nodes.push(new Node
           (
             boggleLetters[row][column],
+            row,
+            column,
             this.generateConnectedNodeList(boggleLetters, row, column, boardSize)
           )
         )
@@ -24,33 +26,38 @@ class Graph {
   }
 
   generateConnectedNodeList(boggleLetters, rowPosition, columnPosition, boardSize) {
-    const connectedNodes = []
+    // wow, actually need a semicolon here otherwise JS makes it [][0,1,-1].forEach...
+    const connectedNodes = [];
 
-    if (rowPosition === 0 && columnPosition === 0) {
-      [0, 1, -1].forEach((offset) => {
-        const rowOffsetPosition = rowPosition + offset
-        const columnOffsetPosition = columnPosition + offset
+    [0, 1, -1].forEach((offset) => {
+      const rowOffsetPosition = rowPosition + offset
+      const columnOffsetPosition = columnPosition + offset
 
-        if (rowOffsetPosition === rowPosition && columnOffsetPosition === columnPosition) return
+      if (
+        rowOffsetPosition === rowPosition ||
+        columnOffsetPosition === columnPosition ||
+        rowOffsetPosition === boardSize ||
+        columnOffsetPosition === boardSize
+      ) {
+        return
+      }
 
-        if (columnOffsetPosition >= 0 && columnOffsetPosition <= boardSize && boggleLetters[rowPosition][columnOffsetPosition]) {
-          connectedNodes.push(`${rowPosition},${columnOffsetPosition}`)
-          // console.log(`match: [${rowPosition}][${columnOffsetPosition}] with value: ${boggleLetters[rowPosition][columnOffsetPosition]}`)
-        }
+      if (columnOffsetPosition >= 0 && columnOffsetPosition <= boardSize && boggleLetters[rowPosition][columnOffsetPosition]) {
+        connectedNodes.push(`${rowPosition},${columnOffsetPosition}`)
+        // console.log(`match: [${rowPosition}][${columnOffsetPosition}] with value: ${boggleLetters[rowPosition][columnOffsetPosition]}`)
+      }
 
-        if (rowOffsetPosition >= 0 && rowOffsetPosition <= boardSize && boggleLetters[rowOffsetPosition][columnPosition]) {
-          connectedNodes.push(`${rowOffsetPosition},${columnPosition}`)
-          // console.log(`match: [${rowOffsetPosition}][${columnPosition}] with value: ${boggleLetters[rowOffsetPosition][columnPosition]}`)
-        }
+      if (rowOffsetPosition >= 0 && rowOffsetPosition <= boardSize && boggleLetters[rowOffsetPosition][columnPosition]) {
+        connectedNodes.push(`${rowOffsetPosition},${columnPosition}`)
+        // console.log(`match: [${rowOffsetPosition}][${columnPosition}] with value: ${boggleLetters[rowOffsetPosition][columnPosition]}`)
+      }
 
-        if(columnOffsetPosition >= 0 && columnOffsetPosition <= boardSize && rowOffsetPosition >= 0 && rowOffsetPosition <= boardSize && boggleLetters[rowOffsetPosition][columnOffsetPosition]) {
-          connectedNodes.push(`${rowOffsetPosition},${columnOffsetPosition}`)
-          // console.log(`match: [${rowOffsetPosition}][${columnOffsetPosition}] with value: ${boggleLetters[rowOffsetPosition][columnOffsetPosition]}`)
-        }
-      })
-    console.log(connectedNodes)
-      return connectedNodes
-    }
+      if(columnOffsetPosition >= 0 && columnOffsetPosition <= boardSize && rowOffsetPosition >= 0 && rowOffsetPosition <= boardSize && boggleLetters[rowOffsetPosition][columnOffsetPosition]) {
+        connectedNodes.push(`${rowOffsetPosition},${columnOffsetPosition}`)
+        // console.log(`match: [${rowOffsetPosition}][${columnOffsetPosition}] with value: ${boggleLetters[rowOffsetPosition][columnOffsetPosition]}`)
+      }
+    })
+    return connectedNodes
   }
 }
 
