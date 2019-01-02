@@ -18,14 +18,15 @@ it('verifies defaults', () => {
 
 
 // [0,0] = [0,1], [1,0], [1,1]
-// [0,1] = [0,0], [0, 2], [1,0], [1,1]
 // [1,1] = [0,0], [0,1], [0,2], [1,0], [1,2], [2,0], [2,1], [2,2]
-// [2,2] = [1,1], [1,2], [1,3], [2,1], [2,3], [3,1], [3,2], [3,3]
 it('generates a correct connected node list', () => {
   const graph = new Graph(boardSize, formattedLetters)
+  // [0,0]
   expect(graph.nodes[0].connectedNodes.length).toEqual(3)
   expect(graph.nodes[0].connectedNodes).toEqual(['0,1', '1,0', '1,1'])
+  // [1,1]
+  expect(graph.nodes[5].connectedNodes.length).toEqual(8)
   expect(graph.nodes[5].connectedNodes).toEqual(
-    ['0,0', '0,1', '0,2', '1,0', '1,2', '2,0', '2,1', '2,2']
+    ['1,2', '2,1', '2,2', '1,0', '2,0', '0,1', '0,2', '0,0']
   )
 })
