@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import wordList from './words_alpha.txt'
+import Graph from './lib/Graph'
 
 class Board extends Component {
   constructor(props) {
@@ -9,16 +10,18 @@ class Board extends Component {
       boardType: '4',
       boggleInputValues: {},
       dictionary: [],
+      wordMatches: [],
     }
   }
 
   componentDidMount() {
-    const words = wordList.split("\n")
-    this.setState({ dictionary: words })
+    const words = wordList.split('\n')
+    const dictionary = words.map((word) => word.replace('\r', ''))
+    this.setState({ dictionary })
   }
 
   handleBoardSolve = event => {
-    const { boardType, boggleInputValues } = this.state
+    const { boardType, boggleInputValues, dictionary } = this.state
     const formattedLetters = []
 
     for (let x = 0; x < Number(boardType); x++) {
@@ -38,7 +41,9 @@ class Board extends Component {
     //   ['n','x','e','x'],
     //   ['x','x','x','Z']
     // ]
-    console.log('Submitted... now render words into solver')
+    const graph = new Graph(boardType, formattedLetters, dictionary)
+    graph.findWordMatches()
+    this.setState({ wordMatches: graph.matchedWords })
   }
 
   handleBoardTypeChange = event => {
@@ -57,7 +62,7 @@ class Board extends Component {
     }))
   }
 
-  renderTextBoxes() {
+  renderTextBoxes = () => {
     const textBoxes = []
     for (let row = 0; row < this.state.boardType; row++) {
       for (let column = 0; column < this.state.boardType; column++) {
@@ -79,6 +84,12 @@ class Board extends Component {
     return textBoxes
   }
 
+  renderWordMatches = () => {
+    const { wordMatches } = this.state
+    if (!wordMatches.length) return null
+    return wordMatches.map((word) => <span key={word}>{word}</span>)
+  }
+
   render() {
     return (
       <div className="Board">
@@ -89,6 +100,7 @@ class Board extends Component {
         </select>
 
         { this.renderTextBoxes()}
+        { this.renderWordMatches() }
         <button onClick={this.handleBoardSolve}>Solve</button>
       </div>
     )
