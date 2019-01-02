@@ -83,10 +83,7 @@ class Graph {
     }
 
     node.connectedNodes.forEach((child) => {
-      const row = Number(child.slice(0,1))
-      const column = Number(child.slice(1,2))
-      const foundChild = this.nodes.find((node) => node.rowPosition === row && node.columnPosition === column)
-      this.findWordMatches(pathLetters, `${foundChild.rowPosition}${foundChild.columnPosition}`, visited)
+      this.findWordMatches(pathLetters, child, visited)
     })
   }
 }
