@@ -42,19 +42,12 @@ class Board extends Component {
     this.state = {
       boardType: '4',
       boggleInputValues: {},
-      dictionary: [],
       wordMatches: [],
     }
   }
 
-  componentDidMount() {
-    const words = wordList.split('\n')
-    const dictionary = words.map((word) => word.replace('\r', ''))
-    this.setState({ dictionary })
-  }
-
   handleBoardSolve = event => {
-    const { boardType, boggleInputValues, dictionary } = this.state
+    const { boardType, boggleInputValues } = this.state
     const formattedLetters = []
 
     for (let x = 0; x < Number(boardType); x++) {
@@ -67,6 +60,8 @@ class Board extends Component {
       formattedLetters[row][column] = boggleInputValues[key]
     })
 
+    const trimmedDictionary = this.loadDictionary()
+
     //format (for 4x4)
     // [
     //   ['a','p','p','x'],
@@ -74,7 +69,7 @@ class Board extends Component {
     //   ['n','x','e','x'],
     //   ['x','x','x','Z']
     // ]
-    const graph = new Graph(boardType, formattedLetters, dictionary)
+    const graph = new Graph(boardType, formattedLetters, trimmedDictionary)
     graph.findWordMatches()
     this.setState({ wordMatches: graph.matchedWords })
   }
@@ -93,6 +88,27 @@ class Board extends Component {
         [name]: value,
       },
     }))
+  }
+
+  loadDictionary = () => {
+    const { boggleInputValues } = this.state
+    const rawWords = wordList.split('\n')
+
+    // not sure why carraige returns, but no time to investigate now
+    const words = rawWords.map((word) => word.replace('\r', ''))
+
+    // get array of input letters
+    const boggleLetters = Object.values(boggleInputValues)
+
+    // only add words that consist of actual submitted letters
+    const dictionary = words.filter((word) => {
+      return word.split('').every((char) => boggleLetters.indexOf(char) >= 0) && word.length > 2
+    })
+
+    // console.log('word length', words.length)
+    // console.log('dict length', dictionary.length)
+    // console.log('dictionary', dictionary)
+    return dictionary
   }
 
   renderTextBoxes = () => {
