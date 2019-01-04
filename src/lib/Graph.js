@@ -67,23 +67,32 @@ class Graph {
     return connectedNodes.sort()
   }
 
-  findWordMatches(pathLetters = '', nodePosition = '00', visited = []) {
+  findWordMatches() {
+    // use each node as a root then check for words
+     this.nodes.forEach((node) => {
+       this.graphSearch('', `${node.rowPosition}${node.columnPosition}`)
+     })
+  }
+
+  graphSearch(pathLetters = '', nodePosition = '00', visited = []) {
     if (visited.includes(nodePosition)) return
     visited.push(nodePosition)
 
-    const row = Number(nodePosition.slice(0,1))
-    const column = Number(nodePosition.slice(1,2))
+    const row = Number(nodePosition[0])
+    const column = Number(nodePosition[1])
     const node = this.nodes.find((node) => node.rowPosition === row && node.columnPosition === column)
     pathLetters += node.value
 
     // need length logic for 5x5 and 6x6
-    if (pathLetters.length > 3) {
+    if (pathLetters.length > 2) {
       const word = this.dictionary.find((word) => word === pathLetters)
-      if (word) this.matchedWords.push(word)
+      if (word && !this.matchedWords.includes(word)) {
+        this.matchedWords.push(word)
+      }
     }
 
     node.connectedNodes.forEach((child) => {
-      this.findWordMatches(pathLetters, child, visited)
+      this.graphSearch(pathLetters, child, visited.slice(0))
     })
   }
 }
