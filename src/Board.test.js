@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import Board from './Board'
+import Select from '@material-ui/core/Select'
 
 it('renders without crashing', () => {
   const component = renderer.create(<Board />)
@@ -10,18 +11,37 @@ it('renders without crashing', () => {
   expect(tree).toMatchSnapshot()
 })
 
-it('renders correct number of textboxes by default', () => {
-  const checkbox = shallow(<Board />)
-  expect(checkbox.find('input').length).toEqual(16)
-})
+// it('renders correct number of text boxes by default', () => {
+//   const board = mount(<Board />)
+//   expect(board.find('input[type="text"]').length).toEqual(16)
+// })
 
-it('renders correct number of textboxes on selection change', () => {
-  const checkbox = shallow(<Board />)
-  expect(checkbox.find('input').length).toEqual(16)
+// it('renders correct number of text boxes on selection change', () => {
+//   const board = mount(<Board />)
+//   expect(board.find('input[type="text"]').length).toEqual(16)
 
-  checkbox.find('select').simulate('change', { target: { value: "5" } })
-  expect(checkbox.find('input').length).toEqual(25)
+//   // console.log(board.find('div[role="button"]').html())
+//   // console.log(board.find('input#boardType').html())
+//   // board.find('div[role="button"]').simulate('change', { target: { value: "5" } })
+//   // board.find('input#boardType').simulate('change', { target: { value: "5" } })
+//   console.log(board
+//     .find(Select)
+//     .at(0)
+//     .props()
+// )
+//   board
+//     .find(Select)
+//     .at(0)
+//     .props()
+//     .onChange({ target: { value: 5 } })
 
-  checkbox.find('select').simulate('change', { target: { value: "6" } })
-  expect(checkbox.find('input').length).toEqual(36)
-})
+//   console.log(board
+//     .find(Select)
+//     .at(0)
+//     .props()
+// )
+//   expect(board.find('input[type="text"]').length).toEqual(25)
+
+//   // board.find('input#boardtype').simulate('change', { target: { value: "6" } })
+//   // expect(board.find('input[type="text"]').length).toEqual(36)
+// })

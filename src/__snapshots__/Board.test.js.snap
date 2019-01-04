@@ -2,176 +2,540 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="Board"
+  className="Board-wrapper-1"
 >
-  <select
-    onChange={[Function]}
-    value="4"
+  <h6
+    className="MuiTypography-root-5 MuiTypography-subtitle1-23 MuiTypography-gutterBottom-32"
   >
-    <option
-      value="4"
+    Boggle Solver:
+    <div
+      className="MuiInputBase-root-60 MuiOutlinedInput-root-47 Board-textField-3"
+      onClick={[Function]}
     >
-      4x4
-    </option>
-    <option
-      value="5"
+      <fieldset
+        aria-hidden={true}
+        className="MuiPrivateNotchedOutline-root-77 MuiOutlinedInput-notchedOutline-54"
+        style={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+      >
+        <legend
+          className="MuiPrivateNotchedOutline-legend-78"
+          style={
+            Object {
+              "width": 0.01,
+            }
+          }
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </legend>
+      </fieldset>
+      <div
+        className="MuiSelect-root-40"
+      >
+        <div
+          aria-haspopup="true"
+          aria-pressed="false"
+          className="MuiSelect-select-41 MuiSelect-selectMenu-44 MuiInputBase-input-70 MuiOutlinedInput-input-55"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          4x4
+        </div>
+        <input
+          id="boardType"
+          name="boardType"
+          type="hidden"
+          value="4"
+        />
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root-79 MuiSelect-icon-46"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+    <button
+      className="MuiButtonBase-root-118 MuiButton-root-92 MuiButton-contained-103 MuiButton-containedPrimary-104 MuiButton-raised-106 MuiButton-raisedPrimary-107"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
     >
-      5x5
-    </option>
-    <option
-      value="6"
-    >
-      6x6
-    </option>
-  </select>
-  <input
-    autoComplete="off"
-    id="00"
-    maxLength="1"
-    name="00"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="01"
-    maxLength="1"
-    name="01"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="02"
-    maxLength="1"
-    name="02"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="03"
-    maxLength="1"
-    name="03"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="10"
-    maxLength="1"
-    name="10"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="11"
-    maxLength="1"
-    name="11"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="12"
-    maxLength="1"
-    name="12"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="13"
-    maxLength="1"
-    name="13"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="20"
-    maxLength="1"
-    name="20"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="21"
-    maxLength="1"
-    name="21"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="22"
-    maxLength="1"
-    name="22"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="23"
-    maxLength="1"
-    name="23"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="30"
-    maxLength="1"
-    name="30"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="31"
-    maxLength="1"
-    name="31"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="32"
-    maxLength="1"
-    name="32"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <input
-    autoComplete="off"
-    id="33"
-    maxLength="1"
-    name="33"
-    onChange={[Function]}
-    size="1"
-    type="text"
-  />
-  <button
-    onClick={[Function]}
+      <span
+        className="MuiButton-label-93"
+      >
+        Solve
+      </span>
+      <span
+        className="MuiTouchRipple-root-235"
+      />
+    </button>
+  </h6>
+  <div
+    className="MuiGrid-container-121 MuiGrid-spacing-xs-24-145"
   >
-    Solve
-  </button>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="00"
+            name="00"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="01"
+            name="01"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="02"
+            name="02"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="03"
+            name="03"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="10"
+            name="10"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="11"
+            name="11"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="12"
+            name="12"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="13"
+            name="13"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="20"
+            name="20"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="21"
+            name="21"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="22"
+            name="22"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="23"
+            name="23"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="30"
+            name="30"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="31"
+            name="31"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="32"
+            name="32"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-122 MuiGrid-grid-xs-3-152"
+    >
+      <div
+        className="MuiFormControl-root-218 MuiFormControl-marginNormal-219 Board-textField-3"
+        maxLength="1"
+      >
+        <div
+          className="MuiInputBase-root-60 MuiFilledInput-root-222 MuiFilledInput-underline-223 MuiInputBase-formControl-61"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoComplete="off"
+            className="MuiInputBase-input-70 MuiFilledInput-input-230"
+            disabled={false}
+            id="33"
+            name="33"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

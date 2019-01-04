@@ -1,6 +1,39 @@
 import React, { Component } from 'react'
 import wordList from './words_alpha.txt'
 import Graph from './lib/Graph'
+import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+import Select from '@material-ui/core/Select'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
+import MenuItem from '@material-ui/core/MenuItem'
+import Paper from '@material-ui/core/Paper'
+
+const styles = theme => ({
+  wrapper: {
+    marginTop: '20px',
+  },
+  container: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(12, 1fr)',
+    gridGap: `${theme.spacing.unit}px * 2`,
+  },
+  textField: {
+    marginLeft: '10px',
+    marginRight: '10px',
+  },
+  select: {
+    marginLeft: '10px',
+    marginRight: '10px',
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+})
 
 class Board extends Component {
   constructor(props) {
@@ -63,21 +96,26 @@ class Board extends Component {
   }
 
   renderTextBoxes = () => {
+    const { classes } = this.props
     const textBoxes = []
+
     for (let row = 0; row < this.state.boardType; row++) {
       for (let column = 0; column < this.state.boardType; column++) {
         textBoxes.push(
-          <input
-            autoComplete="off"
-            id={`${row}${column}`}
-            key={`${row}${column}`}
-            maxLength="1"
-            name={`${row}${column}`}
-            onChange={this.handleInputChange}
-            size="1"
-            type="text"
-            value={this.state.boggleInputValues[`${row}${column}`]}
-          />
+          <Grid item xs={3} key={`${row}${column}`}>
+            <TextField
+              autoComplete="off"
+              id={`${row}${column}`}
+              key={`${row}${column}`}
+              maxLength="1"
+              name={`${row}${column}`}
+              onChange={this.handleInputChange}
+              className={classes.textField}
+              margin="normal"
+              variant="filled"
+              value={this.state.boggleInputValues[`${row}${column}`]}
+            />
+          </Grid>
         )
       }
     }
@@ -86,25 +124,47 @@ class Board extends Component {
 
   renderWordMatches = () => {
     const { wordMatches } = this.state
+    const { classes } = this.props
+
+    // console.log('wordMatches', wordMatches.length)
     if (!wordMatches.length) return null
-    return wordMatches.map((word) => <span key={word}>{word}</span>)
+    return wordMatches.map((word) => <Paper className={classes.paper} key={word}>{word}</Paper>)
   }
 
   render() {
-    return (
-      <div className="Board">
-        <select value={this.state.boardType} onChange={this.handleBoardTypeChange}>
-          <option value="4">4x4</option>
-          <option value="5">5x5</option>
-          <option value="6">6x6</option>
-        </select>
+    const { classes } = this.props
 
-        { this.renderTextBoxes()}
-        { this.renderWordMatches() }
-        <button onClick={this.handleBoardSolve}>Solve</button>
+    return (
+      <div className={classes.wrapper}>
+        <Typography variant="subtitle1" gutterBottom>
+          Boggle Solver:
+          <Select
+            className={classes.textField}
+            value={this.state.boardType}
+            onChange={this.handleBoardTypeChange}
+            input={
+              <OutlinedInput
+                labelWidth={0}
+                name="boardType"
+                id="boardType"
+              />
+            }
+          >
+            <MenuItem value={4}>4x4</MenuItem>
+            <MenuItem value={5}>5x5</MenuItem>
+            <MenuItem value={6}>6x6</MenuItem>
+          </Select>
+          <Button onClick={this.handleBoardSolve} variant="contained" color="primary">
+            Solve
+          </Button>
+        </Typography>
+        <Grid container spacing={24}>
+          { this.renderTextBoxes()}
+          { this.renderWordMatches() }
+        </Grid>
       </div>
     )
   }
 }
 
-export default Board
+export default withStyles(styles)(Board)
