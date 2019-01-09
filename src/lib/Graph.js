@@ -7,6 +7,7 @@ class Graph {
     this.nodes =  this.createNodes(this.boardSize, boggleLetters)
     this.dictionary = dictionary
     this.matchedWords = []
+    this.letterLookup = this.generateLetterLookup(dictionary)
   }
 
   createNodes(boardSize, boggleLetters) {
@@ -67,11 +68,21 @@ class Graph {
     return connectedNodes.sort()
   }
 
+  generateLetterLookup(dictionary) {
+    return dictionary.reduce((acc, word) => {
+      for (let l = 0; l < word.length -1; l++) {
+        const short = word.slice(0, l+1)
+        acc[short] = word
+      }
+      return acc
+    }, {})
+  }
+
   findWordMatches() {
     // use each node as a root then check for words
-     this.nodes.forEach((node) => {
-       this.graphSearch('', `${node.rowPosition}${node.columnPosition}`)
-     })
+    this.nodes.forEach((node) => {
+      this.graphSearch('', `${node.rowPosition}${node.columnPosition}`)
+    })
   }
 
   graphSearch(pathLetters = '', nodePosition = '00', visited = []) {
@@ -85,9 +96,14 @@ class Graph {
 
     // need length logic for 5x5 and 6x6
     if (pathLetters.length > 2) {
-      const word = this.dictionary.find((word) => word === pathLetters)
-      if (word && !this.matchedWords.includes(word)) {
-        this.matchedWords.push(word)
+      if(this.letterLookup[pathLetters]) {
+        const word = this.dictionary.find((word) => word === pathLetters)
+        if (word && !this.matchedWords.includes(word)) {
+          // { pathLetters: '', path: [] }
+          this.matchedWords.push(word)
+        }
+      } else {
+        return
       }
     }
 
